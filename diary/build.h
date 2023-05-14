@@ -4,6 +4,7 @@
 
 
 #include <QMainWindow>
+#include <QGraphicsOpacityEffect>
 
 #include "updatebg.h"
 #include "check.h"
@@ -26,4 +27,5 @@ signals:
 extern QString str;
 extern QString w;
 extern QString m;
+
 

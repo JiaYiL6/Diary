@@ -26,6 +26,8 @@ QString str = QDateTime::currentDateTime().toString("yyyy-MM-dd");
 QString w = ":/res/w.png";
 QString m = ":/res/e1.png";
 
+
+
 build::build(QWidget *parent)
     : QMainWindow{parent}
 {
@@ -47,13 +49,12 @@ build::build(QWidget *parent)
     //写日记标题
     QPalette diarycolor;
     diarycolor.setColor(QPalette::WindowText,Qt::white);
-    QLabel * diary = new QLabel;
+    QLabel * diary = new QLabel(this);
     diary->setPalette(diarycolor);
     QFont diaryfont;
     diaryfont.setPixelSize(28);
     diaryfont.setItalic(1);
     diaryfont.setUnderline(1);
-    diary->setParent(this);
     diary->setFont(diaryfont);
     diary->show();
     diary->setGeometry(40,-4,350,50);
@@ -79,15 +80,15 @@ build::build(QWidget *parent)
         moremenu->addAction(update);
         //按日期查看
         check = new class check;
-        connect(date,&QAction::triggered,[=](){
+        connect(date,&QAction::triggered,[=](){            
             check->setGeometry(this->geometry());
             this->hide();
             check->show();
         });
         connect(check,&check::back,this,[=](){
             this->setGeometry(check->geometry());
-            check->hide();
             this->show();
+            check->hide();
         });
         //修改背景图片
         updatebg = new class updatebg;
@@ -106,20 +107,18 @@ build::build(QWidget *parent)
         });
     });
     //输入标题
-    QLineEdit * title = new QLineEdit;
+    QLineEdit * title = new QLineEdit(this);
     QFont titlefont;
     titlefont.setPixelSize(20);
-    title->setParent(this);
     title->setFont(titlefont);
     title->setPlaceholderText("输入标题");
     title->show();
     title->setGeometry(35,50,350,50);
     title->setGraphicsEffect(opacity1);
     //输入内容
-    QTextEdit * content = new QTextEdit;
+    QTextEdit * content = new QTextEdit(this);
     QFont contentfont;
     contentfont.setPixelSize(18);
-    content->setParent(this);
     content->setFont(contentfont);
     content->setPlaceholderText("输入内容");
     content->show();
@@ -141,7 +140,7 @@ build::build(QWidget *parent)
         sunbtn->show();
         connect(sunbtn,&QPushButton::clicked,[=](){
             w=":/res/w6.png";
-            weatherbtn->seticon(":/res/w6.png");
+            weatherbtn->seticon(w);
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
@@ -153,7 +152,7 @@ build::build(QWidget *parent)
         cloudbtn->setGeometry(40,0,75,75);
         connect(cloudbtn,&QPushButton::clicked,[=](){
             w=":/res/w10.png";
-            weatherbtn->seticon(":/res/w10.png");
+            weatherbtn->seticon(w);
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
@@ -165,7 +164,7 @@ build::build(QWidget *parent)
         mcloudbtn->setGeometry(80,0,75,75);
         connect(mcloudbtn,&QPushButton::clicked,[=](){
             w=":/res/w3.png";
-            weatherbtn->seticon(":/res/w3.png");
+            weatherbtn->seticon(w);
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
@@ -177,7 +176,7 @@ build::build(QWidget *parent)
         snowbtn->setGeometry(0,50,75,75);
         connect(snowbtn,&QPushButton::clicked,[=](){
             w=":/res/w1.png";
-            weatherbtn->seticon(":/res/w1.png");
+            weatherbtn->seticon(w);
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
@@ -189,7 +188,7 @@ build::build(QWidget *parent)
         rainbtn->setGeometry(40,50,75,75);
         connect(rainbtn,&QPushButton::clicked,[=](){
             w=":/res/w2.png";
-            weatherbtn->seticon(":/res/w2.png");
+            weatherbtn->seticon(w);
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
@@ -201,7 +200,7 @@ build::build(QWidget *parent)
         windbtn->setGeometry(80,50,75,75);
         connect(windbtn,&QPushButton::clicked,[=](){
             w=":/res/w4.png";
-            weatherbtn->seticon(":/res/w4.png");
+            weatherbtn->seticon(w);
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
@@ -224,7 +223,7 @@ build::build(QWidget *parent)
         happybtn->show();
         connect(happybtn,&QPushButton::clicked,[=](){
             m=":/res/e1.png";
-            moodbtn->seticon(":/res/e1.png");
+            moodbtn->seticon(m);
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
@@ -236,7 +235,7 @@ build::build(QWidget *parent)
         boringbtn->setGeometry(40,0,75,75);
         connect(boringbtn,&QPushButton::clicked,[=](){
             m=":/res/e4.png";
-            moodbtn->seticon(":/res/e4.png");
+            moodbtn->seticon(m);
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
@@ -248,7 +247,7 @@ build::build(QWidget *parent)
         scarebtn->setGeometry(80,0,75,75);
         connect(scarebtn,&QPushButton::clicked,[=](){
             m=":/res/e6.png";
-            moodbtn->seticon(":/res/e6.png");
+            moodbtn->seticon(m);
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
@@ -260,7 +259,7 @@ build::build(QWidget *parent)
         sadbtn->setGeometry(0,50,75,75);
         connect(sadbtn,&QPushButton::clicked,[=](){
             m=":/res/e7.png";
-            moodbtn->seticon(":/res/e7.png");
+            moodbtn->seticon(m);
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
@@ -272,7 +271,7 @@ build::build(QWidget *parent)
         angrybtn->setGeometry(40,50,75,75);
         connect(angrybtn,&QPushButton::clicked,[=](){
             m=":/res/e10.png";
-            moodbtn->seticon(":/res/e10.png");
+            moodbtn->seticon(m);
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
@@ -284,7 +283,7 @@ build::build(QWidget *parent)
         naughtybtn->setGeometry(80,50,75,75);
         connect(naughtybtn,&QPushButton::clicked,[=](){
             m=":/res/e11.png";
-            moodbtn->seticon(":/res/e11.png");
+            moodbtn->seticon(m);
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
@@ -292,8 +291,7 @@ build::build(QWidget *parent)
     });
 
     //选择日期
-    QLineEdit * date = new QLineEdit;
-    date->setParent(this);
+    QLineEdit * date = new QLineEdit(this);
     date->setEnabled(false);
     date->show();
     date->setGeometry(240,108,80,25);   
@@ -308,35 +306,30 @@ build::build(QWidget *parent)
         calendar->show();
         calendar->setGeometry(150,140,273,193);
         connect(calendar,&QCalendarWidget::clicked,[=](){
-            str = calendar->selectedDate().toString("yyyy-MM-dd");
-            his[num].date=str;
+            str = calendar->selectedDate().toString("yyyy-MM-dd");            
             date->setText(str);
-            QTimer::singleShot(150,this,[=](){
+            QTimer::singleShot(130,this,[=](){
                 calendar->hide();
-            });
-            qDebug()<<str;
+            });  
         });
     });
 
     //清空按钮
-    QPushButton * clearbtn = new QPushButton;
-    clearbtn->setParent(this);
-    clearbtn->move(this->width()*0.55,this->height()*0.94);
-    clearbtn->setFixedSize(70,30);
+    QPushButton * clearbtn = new QPushButton(this);
+    clearbtn->setGeometry(this->width()*0.55,this->height()*0.94,70,30);
     clearbtn->setText("清空");
     connect(clearbtn,&QPushButton::clicked,[=](){
         title->clear();
         content->clear();
         weatherbtn->seticon(":/res/w.png");
         moodbtn->seticon(":/res/e1.png");
-        QString datestr = QDateTime::currentDateTime().toString("yyyy-MM-dd");
-        date->setText(datestr);
+        str = QDateTime::currentDateTime().toString("yyyy-MM-dd");
+        date->setText(str);
     });
     //保存按钮
     QPushButton * savebtn = new QPushButton;
     savebtn->setParent(this);
-    savebtn->move(this->width()*0.75,this->height()*0.94);
-    savebtn->setFixedSize(70,30);
+    savebtn->setGeometry(this->width()*0.75,this->height()*0.94,70,30);
     savebtn->setText("保存");
     connect(savebtn,&QPushButton::clicked,[=](){
         //获取文本
@@ -354,5 +347,4 @@ build::build(QWidget *parent)
         str = QDateTime::currentDateTime().toString("yyyy-MM-dd");
         date->setText(str);
     });
-
 }
