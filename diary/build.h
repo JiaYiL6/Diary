@@ -13,15 +13,12 @@ class build : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit build(QWidget *parent = nullptr);
-    //绘图事件
-//    void paintEvent(QPaintEvent *);
+    explicit build(QWidget *parent = nullptr);   
     //修改背景
     updatebg * updatebg = NULL;
     //按日期查看
     check * check = NULL;
-signals:
-    void back();
+signals:   
 };
 
 #endif // BUILD_H

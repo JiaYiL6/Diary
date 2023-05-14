@@ -117,7 +117,6 @@ updatebg::updatebg(QWidget *parent)
     bg10->show();
     connect(bg10,&QPushButton::clicked,[=](){
         photostr=QFileDialog::getOpenFileName(this,"选择背景","C:\\Users\\86150\\Desktop","(*JPG *PNG)");
-//        photostr=":/res/bg9.jpg";
         QPalette pal = this->palette();
         pal.setBrush(QPalette::Window,QBrush(QPixmap(photostr)));
         setPalette(pal);
@@ -125,11 +124,3 @@ updatebg::updatebg(QWidget *parent)
     });
 }
 
-//背景图片
-//void updatebg::paintEvent(QPaintEvent *)
-//{
-//    QPainter painter2(this);
-//    QPixmap pix;
-//    pix.load(":/res/bg6.jpg");
-//    painter2.drawPixmap(0,0,this->width(),this->height(),pix);
-//}

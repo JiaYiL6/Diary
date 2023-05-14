@@ -14,7 +14,6 @@ SOURCES += \
     edit.cpp \
     history.cpp \
     main.cpp \
-    mainwindow.cpp \
     mypushbutton.cpp \
     updatebg.cpp
 
@@ -23,12 +22,10 @@ HEADERS += \
     check.h \
     edit.h \
     history.h \
-    mainwindow.h \
     mypushbutton.h \
     updatebg.h
 
-FORMS += \
-    mainwindow.ui
+FORMS +=
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

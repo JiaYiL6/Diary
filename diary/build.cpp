@@ -51,7 +51,6 @@ build::build(QWidget *parent)
     diary->setPalette(diarycolor);
     QFont diaryfont;
     diaryfont.setPixelSize(28);
-//    diaryfont.setBold(1);
     diaryfont.setItalic(1);
     diaryfont.setUnderline(1);
     diary->setParent(this);
@@ -69,23 +68,15 @@ build::build(QWidget *parent)
         moremenu->setParent(this);
         moremenu->show();
         moremenu->setGeometry(820,85,70,80);
-//        QAction *keyword = new QAction;
-//        keyword->setText("按内容查找");
-//        keyword->setIcon(QIcon(":/res/date.png"));
         QAction *date = new QAction;
         date->setText("按日期查看");
         date->setIcon(QIcon(":/res/date.png"));
         QAction * update = new QAction;
         update->setText("修改背景图片");
         update->setIcon(QIcon(":/res/photo.png"));
-//        moremenu->addAction(keyword);
-//        moremenu->addSeparator();
         moremenu->addAction(date);
         moremenu->addSeparator();
         moremenu->addAction(update);
-//        connect(keyword,&QAction::triggered,[=](){
-
-//        });
         //按日期查看
         check = new class check;
         connect(date,&QAction::triggered,[=](){
@@ -154,7 +145,6 @@ build::build(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
-            qDebug()<<6;
         });
         //阴天按钮
         mypushbutton * cloudbtn = new mypushbutton(":/res/w10.png");
@@ -167,7 +157,6 @@ build::build(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
-            qDebug()<<10;
         });
         //多云按钮
         mypushbutton * mcloudbtn = new mypushbutton(":/res/w3.png");
@@ -180,7 +169,6 @@ build::build(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
-            qDebug()<<3;
         });
         //下雪按钮
         mypushbutton * snowbtn = new mypushbutton(":/res/w1.png");
@@ -193,7 +181,6 @@ build::build(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
-            qDebug()<<1;
         });
         //下雨按钮
         mypushbutton * rainbtn = new mypushbutton(":/res/w2.png");
@@ -206,7 +193,6 @@ build::build(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
-            qDebug()<<2;
         });
         //刮风按钮
         mypushbutton * windbtn = new mypushbutton(":/res/w4.png");
@@ -219,12 +205,9 @@ build::build(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
-            qDebug()<<4;
         });
     });
-
     //选择心情
-
     mypushbutton * moodbtn = new mypushbutton(":/res/e1.png");
     moodbtn->setParent(this);
     moodbtn->move(this->width()*0.2,105);
@@ -245,7 +228,6 @@ build::build(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
-            qDebug()<<1;
         });
         //无聊按钮
         mypushbutton * boringbtn = new mypushbutton(":/res/e4.png");
@@ -258,7 +240,6 @@ build::build(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
-            qDebug()<<4;
         });
         //惊恐按钮
         mypushbutton * scarebtn = new mypushbutton(":/res/e6.png");
@@ -271,7 +252,6 @@ build::build(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
-            qDebug()<<6;
         });
         //悲伤按钮
         mypushbutton * sadbtn = new mypushbutton(":/res/e7.png");
@@ -284,7 +264,6 @@ build::build(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
-            qDebug()<<7;
         });
         //生气按钮
         mypushbutton * angrybtn = new mypushbutton(":/res/e10.png");
@@ -297,7 +276,6 @@ build::build(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
-            qDebug()<<10;
         });
         //调皮按钮
         mypushbutton * naughtybtn = new mypushbutton(":/res/e11.png");
@@ -310,7 +288,6 @@ build::build(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
-            qDebug()<<11;
         });
     });
 
@@ -329,9 +306,7 @@ build::build(QWidget *parent)
         QCalendarWidget * calendar = new QCalendarWidget;
         calendar->setParent(this);
         calendar->show();
-//        calendar->setMaximumDate(QDate::currentDate());
         calendar->setGeometry(150,140,273,193);
-//        connect(calendar,SIGNAL(selectionChanged()),this,SLOT(getdate(date,calendar)));
         connect(calendar,&QCalendarWidget::clicked,[=](){
             str = calendar->selectedDate().toString("yyyy-MM-dd");
             his[num].date=str;
@@ -343,14 +318,6 @@ build::build(QWidget *parent)
         });
     });
 
-
-    //返回按钮
-//    mypushbutton * backbtn = new mypushbutton(":/res/back.png");
-//    backbtn->setParent(this);
-//    backbtn->move(this->width()*0.02,this->height()*0.01);
-//    connect(backbtn,&QPushButton::clicked,[=](){
-//        emit this->back();
-//    });
     //清空按钮
     QPushButton * clearbtn = new QPushButton;
     clearbtn->setParent(this);
@@ -379,9 +346,7 @@ build::build(QWidget *parent)
         his[num].mood=m;
         his[num].weather=w;
         his[num].flag=1;
-        qDebug()<<"保存"<<his[num].title<<his[num].date<<num;
-        num++;        
-        emit this->back();
+        num++;               
         title->clear();
         content->clear();
         weatherbtn->seticon(":/res/w.png");
@@ -391,12 +356,3 @@ build::build(QWidget *parent)
     });
 
 }
-
-////背景图片
-//void build::paintEvent(QPaintEvent *)
-//{
-//    QPainter painter1(this);
-//    QPixmap pix;
-//    pix.load(":/res/bg6.jpg");
-//    painter1.drawPixmap(0,0,this->width(),this->height(),pix);
-//}

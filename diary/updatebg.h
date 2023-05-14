@@ -10,9 +10,7 @@ class updatebg : public QWidget
 {
     Q_OBJECT
 public:
-    explicit updatebg(QWidget *parent = nullptr);
-    //绘图事件
-//    void paintEvent(QPaintEvent *);
+    explicit updatebg(QWidget *parent = nullptr);   
 signals:
     void back();
 };

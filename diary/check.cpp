@@ -70,9 +70,7 @@ check::check(QWidget *parent)
     QCalendarWidget * calendar = new QCalendarWidget;
     calendar->setParent(this);
     calendar->show();
-//        calendar->setMaximumDate(QDate::currentDate());
     calendar->setGeometry(60,80,300,200);
-//        connect(calendar,SIGNAL(selectionChanged()),this,SLOT(getdate(date,calendar)));
     connect(calendar,&QCalendarWidget::clicked,[=](){
         QString str = calendar->selectedDate().toString("yyyy-MM-dd");
         datelabel->setText(str);
@@ -83,19 +81,15 @@ check::check(QWidget *parent)
         }
         for(i=0;i<=num;i++)
         {
-            qDebug()<<"循环"<<i<<num<<height;
             if(his[i].date==str&&his[i].flag==1)
             {
                 height+=80;
-                qDebug()<<"生成按钮"<<i<<his[i].title;
-//                showbtn[i] = new QPushButton;
                 showbtn[i]->setParent(this);
                 showbtn[i]->setGeometry(35,height,350,70);
                 showbtn[i]->show();
                 showbtn[i]->setText(his[i].title);
                 showbtn[i]->setStyleSheet("background-color:rgba(255,255,255,133);");
                 connect(showbtn[i],&QPushButton::clicked,[=](){
-
                     edit->setGeometry(this->geometry());
                     this->hide();
                     edit->show();

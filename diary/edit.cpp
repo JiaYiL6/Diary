@@ -49,6 +49,8 @@ edit::edit(QWidget *parent)
     //透明设置
     QGraphicsOpacityEffect * opacity = new QGraphicsOpacityEffect;
     opacity->setOpacity(0.6);
+    QGraphicsOpacityEffect * opacity1 = new QGraphicsOpacityEffect;
+    opacity->setOpacity(0.6);
     //返回按钮
     mypushbutton * backbtn = new mypushbutton(":/res/back.png");
     backbtn->setParent(this);
@@ -65,7 +67,7 @@ edit::edit(QWidget *parent)
     title->setText(his[a].title);
     title->show();
     title->setGeometry(35,50,350,50);
-    title->setGraphicsEffect(opacity);
+    title->setGraphicsEffect(opacity1);
     //输入内容
     QTextEdit * content = new QTextEdit;
     QFont contentfont;
@@ -96,7 +98,6 @@ edit::edit(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
-            qDebug()<<6;
         });
         //阴天按钮
         mypushbutton * cloudbtn = new mypushbutton(":/res/w10.png");
@@ -109,7 +110,6 @@ edit::edit(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
-            qDebug()<<10;
         });
         //多云按钮
         mypushbutton * mcloudbtn = new mypushbutton(":/res/w3.png");
@@ -122,7 +122,6 @@ edit::edit(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
-            qDebug()<<3;
         });
         //下雪按钮
         mypushbutton * snowbtn = new mypushbutton(":/res/w1.png");
@@ -135,7 +134,6 @@ edit::edit(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
-            qDebug()<<1;
         });
         //下雨按钮
         mypushbutton * rainbtn = new mypushbutton(":/res/w2.png");
@@ -148,7 +146,6 @@ edit::edit(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
-            qDebug()<<2;
         });
         //刮风按钮
         mypushbutton * windbtn = new mypushbutton(":/res/w4.png");
@@ -161,7 +158,6 @@ edit::edit(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 weatherwidget->close();
             });
-            qDebug()<<4;
         });
     });
 
@@ -187,7 +183,6 @@ edit::edit(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
-            qDebug()<<1;
         });
         //无聊按钮
         mypushbutton * boringbtn = new mypushbutton(":/res/e4.png");
@@ -200,7 +195,6 @@ edit::edit(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
-            qDebug()<<4;
         });
         //惊恐按钮
         mypushbutton * scarebtn = new mypushbutton(":/res/e6.png");
@@ -213,7 +207,6 @@ edit::edit(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
-            qDebug()<<6;
         });
         //悲伤按钮
         mypushbutton * sadbtn = new mypushbutton(":/res/e7.png");
@@ -226,7 +219,6 @@ edit::edit(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
-            qDebug()<<7;
         });
         //生气按钮
         mypushbutton * angrybtn = new mypushbutton(":/res/e10.png");
@@ -239,7 +231,6 @@ edit::edit(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
-            qDebug()<<10;
         });
         //调皮按钮
         mypushbutton * naughtybtn = new mypushbutton(":/res/e11.png");
@@ -252,7 +243,6 @@ edit::edit(QWidget *parent)
             QTimer::singleShot(300,this,[=](){
                 moodwidget->close();
             });
-            qDebug()<<11;
         });
     });
 
@@ -272,9 +262,7 @@ edit::edit(QWidget *parent)
         QCalendarWidget * calendar = new QCalendarWidget;
         calendar->setParent(this);
         calendar->show();
-        //        calendar->setMaximumDate(QDate::currentDate());
         calendar->setGeometry(150,140,273,193);
-        //        connect(calendar,SIGNAL(selectionChanged()),this,SLOT(getdate(date,calendar)));
         connect(calendar,&QCalendarWidget::clicked,[=](){
             str = calendar->selectedDate().toString("yyyy-MM-dd");
             his[num].date=str;
@@ -339,7 +327,5 @@ edit::edit(QWidget *parent)
         QString datestr = QDateTime::currentDateTime().toString("yyyy-MM-dd");
         date->setText(datestr);
     });
-
-
 }
 

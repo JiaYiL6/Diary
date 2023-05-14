@@ -1,11 +1,7 @@
 
 #include "mypushbutton.h"
 #include <QPropertyAnimation>
-//mypushbutton::mypushbutton(QWidget *parent)
-//    : QPushButton(parent)
-//{
 
-//}
 mypushbutton::mypushbutton(QString normal,QString press)
 {
     this->normalpath=normal;
