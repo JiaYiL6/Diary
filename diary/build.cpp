@@ -339,12 +339,8 @@ build::build(QWidget *parent)
         his[num].mood=m;
         his[num].weather=w;
         his[num].flag=1;
-<<<<<<< HEAD
         num++;
         qDebug()<<str;
-=======
-        num++;               
->>>>>>> 75cb49728c3a260d5fc3912394ecef35bfb2a734
         title->clear();
         content->clear();
         weatherbtn->seticon(":/res/w.png");

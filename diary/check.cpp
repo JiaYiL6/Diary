@@ -13,13 +13,8 @@
 #include "history.h"
 #include "mypushbutton.h"
 
-<<<<<<< HEAD
 QPushButton * showbtn[51]={NULL};
 int a=0;
-=======
-QPushButton * showbtn[51];
-int a;
->>>>>>> 75cb49728c3a260d5fc3912394ecef35bfb2a734
 int i;
 
 check::check(QWidget *parent)
@@ -76,6 +71,29 @@ check::check(QWidget *parent)
     calendar->setParent(this);
     calendar->show();
     calendar->setGeometry(60,80,300,200);
+    int height=220;
+    for(i=0;i<=50;i++)
+    {
+        showbtn[i]->hide();
+    }
+    for(i=0;i<=num;i++)
+    {
+        if(his[i].date==QDateTime::currentDateTime().toString("yyyy-MM-dd")&&his[i].flag==1)
+        {
+            height+=80;
+            showbtn[i]->setParent(this);
+            showbtn[i]->setGeometry(35,height,350,70);
+            showbtn[i]->show();
+            showbtn[i]->setText(his[i].title);
+            showbtn[i]->setStyleSheet("background-color:rgba(255,255,255,133);");
+            connect(showbtn[i],&QPushButton::clicked,[=](){
+                edit->setGeometry(this->geometry());
+                this->hide();
+                emit edit->showup();
+                edit->show();
+            });
+        }
+    }
     connect(calendar,&QCalendarWidget::clicked,[=](){
         QString str = calendar->selectedDate().toString("yyyy-MM-dd");
         datelabel->setText(str);
@@ -97,14 +115,8 @@ check::check(QWidget *parent)
                 connect(showbtn[i],&QPushButton::clicked,[=](){
                     edit->setGeometry(this->geometry());
                     this->hide();
-<<<<<<< HEAD
                     emit edit->showup();
                     edit->show();                    
-=======
-                    edit->update();
-                    edit->show();
-
->>>>>>> 75cb49728c3a260d5fc3912394ecef35bfb2a734
                 });
             }
         }
@@ -113,6 +125,8 @@ check::check(QWidget *parent)
         connect(showbtn[2],&QPushButton::clicked,[=](){a=2;});
         connect(showbtn[3],&QPushButton::clicked,[=](){a=3;});
         connect(showbtn[4],&QPushButton::clicked,[=](){a=4;});
+        connect(showbtn[5],&QPushButton::clicked,[=](){a=5;});
+        connect(showbtn[6],&QPushButton::clicked,[=](){a=6;});
     });
 }
 
