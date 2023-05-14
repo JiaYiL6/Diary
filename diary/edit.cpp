@@ -276,6 +276,8 @@ edit::edit(QWidget *parent)
         content->clear();
         weatherbtn->seticon(":/res/w.png");
         moodbtn->seticon(":/res/e1.png");
+        w = ":/res/w.png";
+        m = ":/res/e1.png";
         str = QDateTime::currentDateTime().toString("yyyy-MM-dd");
         date->setText(str);
     });
@@ -297,6 +299,8 @@ edit::edit(QWidget *parent)
         content->clear();
         weatherbtn->seticon(":/res/w.png");
         moodbtn->seticon(":/res/e1.png");
+        w = ":/res/w.png";
+        m = ":/res/e1.png";
         str = QDateTime::currentDateTime().toString("yyyy-MM-dd");
         date->setText(str);
     });
@@ -312,6 +316,8 @@ edit::edit(QWidget *parent)
         content->clear();
         weatherbtn->seticon(":/res/w.png");
         moodbtn->seticon(":/res/e1.png");
+        w = ":/res/w.png";
+        m = ":/res/e1.png";
         str = QDateTime::currentDateTime().toString("yyyy-MM-dd");
         date->setText(str);
     });

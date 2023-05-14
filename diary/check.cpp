@@ -25,6 +25,13 @@ check::check(QWidget *parent)
     }
     //修改实现
     edit = new class edit;
+    connect(showbtn[0],&QPushButton::clicked,[=](){a=0;});
+    connect(showbtn[1],&QPushButton::clicked,[=](){a=1;});
+    connect(showbtn[2],&QPushButton::clicked,[=](){a=2;});
+    connect(showbtn[3],&QPushButton::clicked,[=](){a=3;});
+    connect(showbtn[4],&QPushButton::clicked,[=](){a=4;});
+    connect(showbtn[5],&QPushButton::clicked,[=](){a=5;});
+    connect(showbtn[6],&QPushButton::clicked,[=](){a=6;});
     //监听返回
     connect(edit,&edit::back,this,[=](){
         qDebug()<<"返回";
@@ -119,14 +126,7 @@ check::check(QWidget *parent)
                     edit->show();                    
                 });
             }
-        }
-        connect(showbtn[0],&QPushButton::clicked,[=](){a=0;});
-        connect(showbtn[1],&QPushButton::clicked,[=](){a=1;});
-        connect(showbtn[2],&QPushButton::clicked,[=](){a=2;});
-        connect(showbtn[3],&QPushButton::clicked,[=](){a=3;});
-        connect(showbtn[4],&QPushButton::clicked,[=](){a=4;});
-        connect(showbtn[5],&QPushButton::clicked,[=](){a=5;});
-        connect(showbtn[6],&QPushButton::clicked,[=](){a=6;});
+        }        
     });
 }
 
