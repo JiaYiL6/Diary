@@ -1,0 +1,41 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/back.png</file>
+        <file>res/bg2.jpg</file>
+        <file>res/bg2.png</file>
+        <file>res/bg3.jpg</file>
+        <file>res/bg3.png</file>
+        <file>res/bg4.jpg</file>
+        <file>res/bg4.png</file>
+        <file>res/bg5.jpg</file>
+        <file>res/bg5.png</file>
+        <file>res/bg6.jpg</file>
+        <file>res/bg6.png</file>
+        <file>res/bg7.jpg</file>
+        <file>res/bg7.png</file>
+        <file>res/bg8.jpg</file>
+        <file>res/bg8.png</file>
+        <file>res/bg9.jpg</file>
+        <file>res/bg9.png</file>
+        <file>res/date.png</file>
+        <file>res/diary.png</file>
+        <file>res/e1.png</file>
+        <file>res/e4.png</file>
+        <file>res/e6.png</file>
+        <file>res/e7.png</file>
+        <file>res/e10.png</file>
+        <file>res/e11.png</file>
+        <file>res/more.png</file>
+        <file>res/photo.png</file>
+        <file>res/search.png</file>
+        <file>res/w.png</file>
+        <file>res/w1.png</file>
+        <file>res/w2.png</file>
+        <file>res/w3.png</file>
+        <file>res/w4.png</file>
+        <file>res/w6.png</file>
+        <file>res/w10.png</file>
+        <file>res/add.png</file>
+        <file>res/show.png</file>
+    </qresource>
+</RCC>
