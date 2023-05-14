@@ -39,7 +39,7 @@ build::build(QWidget *parent)
     setWindowTitle("日记本");
     //背景图片
     QPalette pal2 = this->palette();
-    pal2.setBrush(QPalette::Window,QBrush(QPixmap(":/res/bg6.jpg")));
+    pal2.setBrush(QPalette::Window,QBrush(QPixmap(photostr)));
     setPalette(pal2);
     //透明化
     QGraphicsOpacityEffect * opacity = new QGraphicsOpacityEffect;

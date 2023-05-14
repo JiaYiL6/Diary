@@ -22,6 +22,13 @@ updatebg::updatebg(QWidget *parent)
     QPalette pal = this->palette();
     pal.setBrush(QPalette::Window,QBrush(QPixmap(photostr)));
     setPalette(pal);
+    //返回按钮
+    mypushbutton * backbtn = new mypushbutton(":/res/back.png");
+    backbtn->setParent(this);
+    backbtn->move(this->width()*0.02,this->height()*0.01);
+    connect(backbtn,&QPushButton::clicked,[=](){
+        emit this->back();
+    });
     //按钮
     mypushbutton * bg6 = new mypushbutton(":/res/bg6.png");
     bg6->setParent(this);
@@ -30,7 +37,7 @@ updatebg::updatebg(QWidget *parent)
     connect(bg6,&QPushButton::clicked,[=](){
         photostr=":/res/bg6.jpg";
         QPalette pal = this->palette();
-        pal.setBrush(QPalette::Window,QBrush(QPixmap(":/res/bg6.jpg")));
+        pal.setBrush(QPalette::Window,QBrush(QPixmap(photostr)));
         setPalette(pal);
         emit this->back();
     });
@@ -41,7 +48,7 @@ updatebg::updatebg(QWidget *parent)
     connect(bg2,&QPushButton::clicked,[=](){
         photostr=":/res/bg2.jpg";
         QPalette pal = this->palette();
-        pal.setBrush(QPalette::Window,QBrush(QPixmap(":/res/bg2.jpg")));
+        pal.setBrush(QPalette::Window,QBrush(QPixmap(photostr)));
         setPalette(pal);
         emit this->back();
     });
@@ -52,7 +59,7 @@ updatebg::updatebg(QWidget *parent)
     connect(bg3,&QPushButton::clicked,[=](){
         photostr=":/res/bg3.jpg";
         QPalette pal = this->palette();
-        pal.setBrush(QPalette::Window,QBrush(QPixmap(":/res/bg3.jpg")));
+        pal.setBrush(QPalette::Window,QBrush(QPixmap(photostr)));
         setPalette(pal);
         emit this->back();
     });
@@ -63,7 +70,7 @@ updatebg::updatebg(QWidget *parent)
     connect(bg4,&QPushButton::clicked,[=](){
         photostr=":/res/bg4.jpg";
         QPalette pal = this->palette();
-        pal.setBrush(QPalette::Window,QBrush(QPixmap(":/res/bg4.jpg")));
+        pal.setBrush(QPalette::Window,QBrush(QPixmap(photostr)));
         setPalette(pal);
         emit this->back();
     });
@@ -74,7 +81,7 @@ updatebg::updatebg(QWidget *parent)
     connect(bg5,&QPushButton::clicked,[=](){
         photostr=":/res/bg5.jpg";
         QPalette pal = this->palette();
-        pal.setBrush(QPalette::Window,QBrush(QPixmap(":/res/bg5.jpg")));
+        pal.setBrush(QPalette::Window,QBrush(QPixmap(photostr)));
         setPalette(pal);
         emit this->back();
     });
@@ -85,7 +92,7 @@ updatebg::updatebg(QWidget *parent)
     connect(bg7,&QPushButton::clicked,[=](){
         photostr=":/res/bg7.jpg";
         QPalette pal = this->palette();
-        pal.setBrush(QPalette::Window,QBrush(QPixmap(":/res/bg7.jpg")));
+        pal.setBrush(QPalette::Window,QBrush(QPixmap(photostr)));
         setPalette(pal);
         emit this->back();
     });
@@ -96,7 +103,7 @@ updatebg::updatebg(QWidget *parent)
     connect(bg8,&QPushButton::clicked,[=](){
         photostr=":/res/bg8.jpg";
         QPalette pal = this->palette();
-        pal.setBrush(QPalette::Window,QBrush(QPixmap(":/res/bg8.jpg")));
+        pal.setBrush(QPalette::Window,QBrush(QPixmap(photostr)));
         setPalette(pal);
         emit this->back();
     });
@@ -107,7 +114,7 @@ updatebg::updatebg(QWidget *parent)
     connect(bg9,&QPushButton::clicked,[=](){
         photostr=":/res/bg9.jpg";
         QPalette pal = this->palette();
-        pal.setBrush(QPalette::Window,QBrush(QPixmap(":/res/bg9.jpg")));
+        pal.setBrush(QPalette::Window,QBrush(QPixmap(photostr)));
         setPalette(pal);
         emit this->back();
     });
@@ -115,7 +122,7 @@ updatebg::updatebg(QWidget *parent)
     bg10->setParent(this);
     bg10->move(315,530);
     bg10->show();
-    connect(bg10,&QPushButton::clicked,[=](){
+    connect(bg10,&QPushButton::clicked,[=](){        
         photostr=QFileDialog::getOpenFileName(this,"选择背景","C:\\Users\\86150\\Desktop","(*JPG *PNG)");
         QPalette pal = this->palette();
         pal.setBrush(QPalette::Window,QBrush(QPixmap(photostr)));

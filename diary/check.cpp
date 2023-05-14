@@ -21,7 +21,7 @@ check::check(QWidget *parent)
     : QWidget{parent}
 {
     for (i = 0; i <= 50; i++) {
-        showbtn[i] = new QPushButton(this);
+        showbtn[i] = new QPushButton;
     }
     //修改实现
     edit = new class edit;
@@ -84,6 +84,7 @@ check::check(QWidget *parent)
             if(his[i].date==str&&his[i].flag==1)
             {
                 height+=80;
+                showbtn[i]->setParent(this);
                 showbtn[i]->setGeometry(35,height,350,70);
                 showbtn[i]->show();
                 showbtn[i]->setText(his[i].title);
