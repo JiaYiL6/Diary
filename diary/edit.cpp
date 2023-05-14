@@ -47,7 +47,11 @@ edit::edit(QWidget *parent)
     backbtn->move(this->width()*0.02,this->height()*0.01);
     connect(backbtn,&QPushButton::clicked,[=](){
         emit this->back();
+<<<<<<< HEAD
     });    
+=======
+    });
+>>>>>>> 75cb49728c3a260d5fc3912394ecef35bfb2a734
     //输入标题
     QLineEdit * title = new QLineEdit(this);
     QFont titlefont;
@@ -258,6 +262,7 @@ edit::edit(QWidget *parent)
             });
         });
     });
+<<<<<<< HEAD
     //重新出现
     connect(this,&edit::showup,[=](){
         title->setText(his[a].title);
@@ -267,6 +272,9 @@ edit::edit(QWidget *parent)
         str = his[a].date;
         date->setText(str);
     });
+=======
+
+>>>>>>> 75cb49728c3a260d5fc3912394ecef35bfb2a734
     //清空按钮
     QPushButton * clearbtn = new QPushButton(this);
     clearbtn->setGeometry(this->width()*0.55,this->height()*0.94,70,30);

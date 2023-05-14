@@ -23,12 +23,21 @@ updatebg::updatebg(QWidget *parent)
     pal.setBrush(QPalette::Window,QBrush(QPixmap(photostr)));
     setPalette(pal);
     //返回按钮
+<<<<<<< HEAD
     mypushbutton * backbtn = new mypushbutton(":/res/back.png");
     backbtn->setParent(this);
     backbtn->move(this->width()*0.02,this->height()*0.01);
     connect(backbtn,&QPushButton::clicked,[=](){
         emit this->back();
     });
+=======
+//    mypushbutton * backbtn = new mypushbutton(":/res/back.png");
+//    backbtn->setParent(this);
+//    backbtn->move(this->width()*0.02,this->height()*0.01);
+//    connect(backbtn,&QPushButton::clicked,[=](){
+//        emit this->back();
+//    });
+>>>>>>> 75cb49728c3a260d5fc3912394ecef35bfb2a734
     //按钮
     mypushbutton * bg6 = new mypushbutton(":/res/bg6.png");
     bg6->setParent(this);

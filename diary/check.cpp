@@ -13,8 +13,13 @@
 #include "history.h"
 #include "mypushbutton.h"
 
+<<<<<<< HEAD
 QPushButton * showbtn[51]={NULL};
 int a=0;
+=======
+QPushButton * showbtn[51];
+int a;
+>>>>>>> 75cb49728c3a260d5fc3912394ecef35bfb2a734
 int i;
 
 check::check(QWidget *parent)
@@ -92,8 +97,14 @@ check::check(QWidget *parent)
                 connect(showbtn[i],&QPushButton::clicked,[=](){
                     edit->setGeometry(this->geometry());
                     this->hide();
+<<<<<<< HEAD
                     emit edit->showup();
                     edit->show();                    
+=======
+                    edit->update();
+                    edit->show();
+
+>>>>>>> 75cb49728c3a260d5fc3912394ecef35bfb2a734
                 });
             }
         }
