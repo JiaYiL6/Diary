@@ -16,6 +16,7 @@
 QPushButton * showbtn[51]={NULL};
 int a=0;
 int i;
+QString str1;
 
 check::check(QWidget *parent)
     : QWidget{parent}
@@ -47,7 +48,7 @@ check::check(QWidget *parent)
         int height=220;
         for(i=0;i<=num;i++)
         {
-            if(his[i].date==QDateTime::currentDateTime().toString("yyyy-MM-dd")&&his[i].flag==1)
+            if(his[i].date==str1&&his[i].flag==1)
             {
                 height+=80;
                 showbtn[i]->setParent(this);
@@ -126,8 +127,8 @@ check::check(QWidget *parent)
         }
     }
     connect(calendar,&QCalendarWidget::clicked,[=](){
-        QString str = calendar->selectedDate().toString("yyyy-MM-dd");
-        datelabel->setText(str);
+        str1 = calendar->selectedDate().toString("yyyy-MM-dd");
+        datelabel->setText(str1);
         int height=220;
         for(i=0;i<=50;i++)
         {
@@ -135,7 +136,7 @@ check::check(QWidget *parent)
         }
         for(i=0;i<=num;i++)//循环遍历每一篇日记，num是日记的总篇数+1
         {
-            if(his[i].date==str&&his[i].flag==1)//当第i篇日记的日期等于选择的日期且第i篇日记flag为1即存在时
+            if(his[i].date==str1&&his[i].flag==1)//当第i篇日记的日期等于选择的日期且第i篇日记flag为1即存在时
             {
                 height+=80;
                 showbtn[i]->setParent(this);//以下是按钮的文字和位置设置
