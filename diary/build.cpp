@@ -9,7 +9,6 @@
 #include <QPushButton>
 #include <QCalendarWidget>
 #include <QDate>
-#include <QDebug>
 #include <QTimer>
 #include <QDialog>
 #include <QPalette>
@@ -342,7 +341,6 @@ build::build(QWidget *parent)
         his[num].weather=w;
         his[num].flag=1;
         num++;
-        qDebug()<<str;
         title->clear();
         content->clear();
         weatherbtn->seticon(":/res/w.png");
